@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Home page</title> 
+<style>
+*{font-family:arial;line-height:25px;font-size: 14px;}
+td{
+	    border: 1px solid #000;
+    padding: 0 10px;
+}
+</style>
+</head>
+<body> 
+
+<div id="demo"></div>
+
+<div id="title"></div>
+<div id="demo2"></div>
+
+
+
+<script> 
+const posts = [
+	{categoty: 'Food' , title : 'Rise'},
+	{categoty: 'Water' , title : 'Cold Drink'}
+];
+
+  posts.map((allpost,index) => ( 
+	  demo.innerHTML += `<table><tr><td>${allpost.categoty}</td><td> ${allpost.title}</td></tr></table>`
+  ));
+
+
+function createPost(){
+}
+</script>
+</body>
+</html>
