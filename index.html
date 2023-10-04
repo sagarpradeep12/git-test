@@ -13,24 +13,15 @@ td{
 
 <div id="demo"></div>
 
-<div id="title"></div>
-<div id="demo2"></div>
-
 
 
 <script> 
-const posts = [
-	{categoty: 'Food' , title : 'Rise'},
-	{categoty: 'Water' , title : 'Cold Drink'}
-];
+let a = prompt("What is your name?");
+let b = prompt("What is your age?");
+let c = prompt("What is favorite color?");
 
-  posts.map((allpost,index) => ( 
-	  demo.innerHTML += `<table><tr><td>${allpost.categoty}</td><td> ${allpost.title}</td></tr></table>`
-  ));
+demo.innerHTML = `<b>${a}</b> is <b>${b}</b> is your age and your favorite color is <b>${c}</b>`;
 
-
-function createPost(){
-}
 </script>
 </body>
 </html>
