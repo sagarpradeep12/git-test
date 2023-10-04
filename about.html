@@ -2,31 +2,94 @@
 <head>
 <title>About us page ss 11</title>
 <style>
-*{font-family:arial;line-height:25px;font-size: 14px;}
-td{
-	    border: 1px solid #000;
+*{font-family:arial;line-height:25px;font-size: 14px;border-spacing: 0;}
+td,th{
+	border: 1px solid #000;
     padding: 0 10px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flex p {
+    margin-left: 10px;
+}
+
+.flex button {
+    margin-left: 10px;
+
+}
+
+.flex input[type="text"] {
+    margin-left: 10px;
 }
 </style>
 </head>
 <body> 
 
-<div id="demo"></div>
+<div >
+	<table id="demo" style="width: 50%;text-align: left;">
+		<tr >
+			<th width="50%">Categoty</th>
+			<th width="50%">Title</th>
+		</tr>
 
-<div id="title"></div>
-<div id="demo2"></div>
+	</table>
+</div>
 
 
+<div class="flex">
+<p>Categoty</p>
+<input type="text" placeholder="Enter" id="catIn">
+<p>Title</p>
+<input type="text" placeholder="Enter" id="titleIn">
+<button id="addbtn">Add</button>
+</div>
+
+<button id="dltbtn" onclick="myFunction()" style="border:0;background: transparent;cursor: pointer;">X</button>
 
 <script> 
-const posts = [
+var catval = catIn.value;
+var titleval = titleIn.value;
+var posts = [
 	{categoty: 'Food' , title : 'Rise'},
 	{categoty: 'Water' , title : 'Cold Drink'}
 ];
+let newaddTr;
 
-  posts.map((allpost,index) => ( 
+addbtn.addEventListener("click", function(){
+	
+	posts.push({categoty: catIn.value,title: titleIn.value});		
+	//console.log(posts);
+	 
+	/*posts.map((allpost,index) => ( 
 	  demo.innerHTML += `<table><tr><td>${allpost.categoty}</td><td> ${allpost.title}</td></tr></table>`
-  ));
+  	));*/
+	
+	newaddTr = `<tr collspan="3" id="s+inctr"><td>${catIn.value}</td><td> ${titleIn.value}</td><td><button id="dltbtn" style="border:0;background: transparent;cursor: pointer;">X</button></td></tr>` 
+    demo.innerHTML += newaddTr;
+	
+    catIn.value = " ";
+	titleIn.value = " ";
+
+	/*dltbtn.addEventListener("click", function(){
+		alert("hello");
+		newaddTr.remove;
+	})*/
+});
+var inctab = demo;
+function myFunction(){
+	alert("hello");
+	inctab.remove();
+}
+
+
+//posts.push({categoty: 'Travel' , title : 'Bike'});
+//posts.push({categoty: 'Clothes' , title : 'T-shirt'});
+
+  
 
 
 function createPost(){
