@@ -49,32 +49,29 @@
 <body>
 	<div class="container">
 		<h2 class="word">Geeks</h2>
-		<h2 class="word">For</h2>
-		<h2 class="word">Geeks</h2>
-		<h2 class="word">Geeks</h2>
+		<h2 class="word">Front</h2>
+		<h2 class="word">End</h2>
+		<h2 class="word">Developer</h2>
+
 	</div>
 </body>
 <script>
 	let words = document.querySelectorAll(".word");
+	const animateAll = (animate) => {
+	for (let i = 0; i < words.length; i++) {
+		setTimeout(() => {
+		//console.log("test", words[i]);
+		//animate(words[i]); // Call the animate function and pass the current word
+		words[i].classList.add("animate"); // Add the class "animate" to the current word
+		}, 1000 * i);
+	}
+	}
 
+	const animate = (word) => {
+	//  console.log("test1", word);
+	}
 
-//commit
-
-const animateAll = (animate) => {
-  for (let i = 0; i < words.length; i++) {
-    setTimeout(() => {
-      //console.log("test", words[i]);
-      //animate(words[i]); // Call the animate function and pass the current word
-      words[i].classList.add("animate"); // Add the class "animate" to the current word
-    }, 1000 * i);
-  }
-}
-
-const animate = (word) => {
-//  console.log("test1", word);
-}
-
-animateAll(animate);
+	animateAll(animate);
 	
 </script>
 </html>
